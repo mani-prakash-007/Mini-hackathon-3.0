@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import hypervergeLogo from "../assets/sidebar1/hyperverge.png";
+import { NavLink } from "react-router-dom";
 
 export const Sidebar = () => {
   const [sidebar2Visibility, setSidebar2Visibility] = useState(false);
@@ -141,15 +142,15 @@ export const Sidebar = () => {
     components: [
       {
         name: "Demo",
-        path: "/concentManager/demo",
+        path: "/consentManager/demo",
       },
       {
         name: "Configurations",
-        path: "/concentManager/configurations",
+        path: "/consentManager/configurations",
       },
       {
         name: "Search",
-        path: "/concentManager/search",
+        path: "/consentManager/search",
       },
     ],
   };
@@ -211,7 +212,7 @@ export const Sidebar = () => {
             <ul>
               <li
                 key={0}
-                className="h-13 flex flex-col items-center justify-center py-2"
+                className="h-13 flex flex-col items-center justify-center py-2 cursor-pointer"
                 onClick={() => handleSidebar1Click("Home")}
               >
                 <img
@@ -251,7 +252,45 @@ export const Sidebar = () => {
         }`}
       >
         <div className={`${!sidebar2Visibility ? "hidden" : ""}`}>
-          <h1>{sidebar2Content.title}</h1>
+          <h1 className="w-47.87 h-6 mt-6 ml-3 mr-3.125 mb-5.5 text-l font-medium text-darknavyblue">
+            {sidebar2Content.title}
+          </h1>
+          <div className="w-47.87 h-28.5 ml-3 mr-3.125 mb-3.5">
+            <ul className="w-47.87 h-28">
+              {sidebar2Content.components?.map((item, index) => {
+                return (
+                  <NavLink
+                    to={item.path}
+                    key={index}
+                    className={({ isActive }) =>
+                      `group flex items-center h-9 hover:bg-lavender hover:border hover:border-gainsboro hover:rounded-5 ${
+                        isActive &&
+                        "bg-lavender border border-gainsboro rounded-5 text-neonblue"
+                      }`
+                    }
+                  >
+                    <div className="flex items-center my-2 ml-3.125">
+                      <div className="relative h-5 w-5 group hover:border-blue-400 active:border-blue-400">
+                        <img
+                          src={`./src/assets/sidebar2/${item.name}.png`}
+                          alt={item.name}
+                          className="absolute top-0 left-0 h-5 w-5 opacity-100 group-hover:opacity-0 group-active:opacity-0"
+                        />
+                        <img
+                          src={`./src/assets/sidebar2/${item.name}-hover.png`}
+                          alt={`${item.name}-hover`}
+                          className="absolute top-0 left-0 h-5 w-5 opacity-0 group-hover:opacity-100 group-active:opacity-100"
+                        />
+                      </div>
+                      <p className="text-darknavyblue font-medium text-bs h-4 my-0.5 ml-1 group-hover:text-neonblue group-active:text-neonblue">
+                        {item.name}
+                      </p>
+                    </div>
+                  </NavLink>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
