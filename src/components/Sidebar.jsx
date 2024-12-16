@@ -197,15 +197,15 @@ export const Sidebar = () => {
   };
 
   return (
-    <div className="h-screen flex">
-      <div className="bg-darkblue w-side_1 h-screen flex justify-between py-5 p-0.5">
+    <div className="h-[822px] flex">
+      <div className="bg-darkblue w-[68px] h-[822px] flex justify-between py-5 p-0.5">
         <div className="h-full w-16.5">
           {/* Hyperverge Logo  */}
-          <div className="flex justify-center px-2.25">
+          <div className="flex justify-center px-[9px]">
             <img
               src={hypervergeLogo}
               alt=""
-              className="w-7 h-7.77 mt-2 mb-2.22  mx-2.5"
+              className="w-7 h-[31.11px] mt-2 mb-[8.89px]  mx-2.5"
             />
           </div>
           <div className="h-104 w-16.5 mt-4">
@@ -247,7 +247,7 @@ export const Sidebar = () => {
         </div>
       </div>
       <div
-        className={`border border-gainsboro bg-snow h-screen duration-500 transform ${
+        className={`border border-gainsboro bg-snow h-[822px] duration-500 transform ${
           sidebar2Visibility ? "translate-x-0 w-side_2" : "-translate-x-0 w-0"
         }`}
       >

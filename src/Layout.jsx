@@ -7,11 +7,11 @@ export const Layout = () => {
   useEffect(() => {
     if (window.location.pathname !== "/") {
       navigate("/");
-      window.reload();
+      window.location.reload();
     }
   }, [navigate]);
   return (
-    <div className="flex">
+    <div className="flex w-[1440px] h-[822px] border border-gray-200">
       <Sidebar />
       <Outlet />
     </div>
