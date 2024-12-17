@@ -133,7 +133,19 @@ export const ConsentManagerDemo = () => {
       });
       return;
     }
-    setConsentStatus(true);
+    if (consentToken.length > 5) {
+      toast.success("Consent Accepted", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      setConsentStatus(true);
+    } else {
+      toast.error("Consent Denied", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      setConsentStatus(false);
+    }
     setBlock3Section2Visiblity(true);
   };
 
