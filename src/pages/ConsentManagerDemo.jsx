@@ -49,14 +49,12 @@ export const ConsentManagerDemo = () => {
       setBlock1ButtonVisiblity(false);
     }
   };
-  console.log(import.meta.env.VITE_API_URL);
 
   //Consent SDK Instance
   const consent = new ConsentSDK(import.meta.env.VITE_API_URL);
 
   //Handle click function for block - 1 button
   const handleBlock1Button = async () => {
-    console.log("Function - Start");
     //Toast on Loading
     const toastId = toast.loading("requesting Consent", {
       position: "top-right",
@@ -73,7 +71,6 @@ export const ConsentManagerDemo = () => {
       scope
     );
     setConsentDetails(requestConsentResponse);
-    console.log("Request consent Response : ", requestConsentResponse);
     if (requestConsentResponse) {
       // toast success
       toast.update(toastId, {
@@ -94,7 +91,6 @@ export const ConsentManagerDemo = () => {
       });
     }
 
-    console.log("Function - end");
   };
   //Handle click function for block - 2 Deny button
   const handleBlock2DenyButton = () => {
@@ -152,16 +148,6 @@ export const ConsentManagerDemo = () => {
   useEffect(() => {
     enableButtonVisiblity();
   }, [customerId, redirectURI, purpose, policyVersion, scope]);
-
-  // logs
-  // console.log("customer id : ", customerId);
-  // console.log("Redirect uri : ", redirectURI);
-  // console.log("Ref URI", refURI);
-  // console.log("policy Version : ", policyVersion);
-  // console.log("purpose : ", purpose);
-  // console.log("scope : ", scope);
-  console.log("faceScanCheck : ", faceScanCheck);
-  console.log("locationAccessCheck : ", locationAccessCheck);
 
   return (
     <>
