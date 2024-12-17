@@ -133,6 +133,7 @@ export const ConsentManagerDemo = () => {
       });
       return;
     }
+    setConsentStatus(true);
     setBlock3Section2Visiblity(true);
   };
 
@@ -180,7 +181,7 @@ export const ConsentManagerDemo = () => {
                     <input
                       id={"customerId"}
                       name={"customerId"}
-                      type="text"
+                      type="password"
                       onChange={(e) => setCustomerId(e.target.value)}
                       className="border border-gainsboro h-9 w-79.25 px-3 py-1.87 rounded-6 focus:outline-none text-darknavyblue opacity-80 font-medium tracking-tight"
                     />
