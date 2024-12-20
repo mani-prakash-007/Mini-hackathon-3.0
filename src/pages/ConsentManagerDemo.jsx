@@ -60,37 +60,36 @@ export const ConsentManagerDemo = () => {
       position: "top-right",
       autoClose: 5000,
     });
-    const requestConsentResponse = await consent.requestConsent(
-      customerId,
-      transactionId,
-      redirectURI,
-      policyVersion,
-      refURI,
-      purpose,
-      code,
-      scope
-    );
-    setConsentDetails(requestConsentResponse);
-    if (requestConsentResponse) {
-      // toast success
-      toast.update(toastId, {
-        render: "request Consent Success",
-        type: "success",
-        isLoading: false,
-        autoClose: 3000,
-      });
-      setBlock1Visiblity(false);
-      setBlock2Visiblity(true);
-    } else {
-      // toast error
-      toast.update(toastId, {
-        render: "request Consent Error",
-        type: "error",
-        isLoading: false,
-        autoClose: 3000,
-      });
-    }
-
+    // const requestConsentResponse = await consent.requestConsent(
+    //   customerId,
+    //   transactionId,
+    //   redirectURI,
+    //   policyVersion,
+    //   refURI,
+    //   purpose,
+    //   code,
+    //   scope
+    // );
+    // setConsentDetails(requestConsentResponse);
+    // if (requestConsentResponse) {
+    // toast success
+    toast.update(toastId, {
+      render: "request Consent Success",
+      type: "success",
+      isLoading: false,
+      autoClose: 3000,
+    });
+    setBlock1Visiblity(false);
+    setBlock2Visiblity(true);
+    // } else {
+    //   // toast error
+    //   toast.update(toastId, {
+    //     render: "request Consent Error",
+    //     type: "error",
+    //     isLoading: false,
+    //     autoClose: 3000,
+    //   });
+    // }
   };
   //Handle click function for block - 2 Deny button
   const handleBlock2DenyButton = () => {
@@ -152,12 +151,12 @@ export const ConsentManagerDemo = () => {
   return (
     <>
       <ToastContainer stacked />
-      <div className="w-[1156px] ">
+      <div className="w-full flex justify-center">
         {/*Block 1 - Enter consent details  */}
         <div
           className={`${
             !block1Visiblity && "hidden"
-          } h-109.5 w-141.75 mt-30 ml-73.5 mr-73.75 mb-66 flex flex-col items-center`}
+          } h-109.5 w-141.75 mt-30 ml-73.5 mr-73.75 mb-66 flex flex-col items-center justify-center`}
         >
           <h1 className="text-xxl text-center font-semibold text-darknavyblue w-50.75 h-7.5 tracking-tight mx-45.5">
             Enter Consent Details

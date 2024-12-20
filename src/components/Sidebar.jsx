@@ -197,8 +197,8 @@ export const Sidebar = () => {
   };
 
   return (
-    <div className="h-[822px] flex">
-      <div className="bg-darkblue w-[68px] h-[822px] flex justify-between py-5 p-0.5">
+    <div className="h-full flex">
+      <div className="bg-darkblue w-[68px] h-full flex justify-between py-5 p-0.5">
         <div className="h-full w-16.5">
           {/* Hyperverge Logo  */}
           <div className="flex justify-center px-[9px]">
@@ -247,7 +247,7 @@ export const Sidebar = () => {
         </div>
       </div>
       <div
-        className={`border border-gainsboro bg-snow h-[822px] duration-500 transform ${
+        className={`border border-gainsboro bg-snow h-full duration-500 transform ${
           sidebar2Visibility ? "translate-x-0 w-side_2" : "-translate-x-0 w-0"
         }`}
       >

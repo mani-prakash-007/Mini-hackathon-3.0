@@ -11,7 +11,7 @@ export const Layout = () => {
     }
   }, [navigate]);
   return (
-    <div className="flex w-[1440px] h-[822px] border border-gray-200">
+    <div className="flex w-screen h-screen">
       <Sidebar />
       <Outlet />
     </div>
